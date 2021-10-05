@@ -32,12 +32,12 @@ pipeline
             // call fastlane lane for generate apk and uploading to testflight
             steps{
                 withCredentials([file(credentialsId: 'key_jks', variable: 'key_jks'), file(credentialsId: 'env_dev', variable: 'env_dev')]) {
+                    sh "ls -l ${workspace}"
                     sh "chmod +x gradlew"                    
                     sh "chmod +x Gemfile"
                     sh "cp \$key_jks ${workspace}/key.jks"
                     sh "cp \$env_dev ${workspace}/fastlane/.env.dev"
                     sh "fastlane build --env dev"    //eg. fastlane build --env development
-                    sh "ls -l ${workspace}"
                 }
             }
         }
