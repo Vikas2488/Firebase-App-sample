@@ -1,4 +1,4 @@
-package dev.shreyaspatil.firebase.app.distribution.demo
+package assignment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

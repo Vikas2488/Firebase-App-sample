@@ -1,4 +1,4 @@
-package dev.shreyaspatil.firebase.app.distribution.demo
+package assignment
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
 	fun useAppContext() {
 		// Context of the app under test.
 		val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-		assertEquals("dev.shreyaspatil.firebase.app.distribution.demo", appContext.packageName)
+		assertEquals("assignment", appContext.packageName)
 	}
 }

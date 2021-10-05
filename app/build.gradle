@@ -1,73 +1,66 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
-androidExtensions {
-    experimental = true
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
-
-def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "dev.shreyaspatil.firebase.app.distribution.demo"
+        applicationId "com.assignment.dev"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 10
-        versionName "1.5"
+        versionName "1.1"
 
-        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        // signingConfig signingConfigs.release
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    
-    // signingConfigs {
-    //     release {
-    //         if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
-    //             storeFile file(MYAPP_UPLOAD_STORE_FILE)
-    //             storePassword MYAPP_UPLOAD_STORE_PASSWORD
-    //             keyAlias MYAPP_UPLOAD_KEY_ALIAS
-    //             keyPassword MYAPP_UPLOAD_KEY_PASSWORD
-    //         }
-    //     }
-    // }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
 
-       release {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 
-           minifyEnabled false
-
-           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-           
-           signingConfig signingConfigs.release
-
-           ext.config = getProps('../config/dev.properties')
-
-           ext.config.each { p ->
-
-               if (p.key == "APPNAME") {
-
-                   resValue "string", "app_name", p.value
-
-               } else if (p.key == "APPLICATION_ID_SUFFIX") {
-
-                   applicationIdSuffix p.value
-
-               } else
-
-                   buildConfigField 'String', p.key, p.value
-
-
-           }
-
-       }
-
-   }
+//     buildTypes {
+//        release {
+//            minifyEnabled false
+//         //    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//            ext.config = getProps('../config/dev.properties')
+//            ext.config.each { p ->
+//                if (p.key == "APPNAME") {
+//                    resValue "string", "app_name", p.value
+//                } else if (p.key == "APPLICATION_ID_SUFFIX") {
+//                    applicationIdSuffix p.value
+//                } else
+//                    buildConfigField 'String', p.key, p.value
+//            }
+//        }
+//    }
 
     // buildTypes {
     //     release {

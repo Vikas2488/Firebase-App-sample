@@ -1,4 +1,4 @@
-package dev.shreyaspatil.firebase.app.distribution.demo
+package assignment
 
 import org.junit.Test
 

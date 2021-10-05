@@ -20,6 +20,13 @@
 /app/emulator/
 /app/build-tools/
 /app/.temp
+.project
+.settings/
+.vscode/
+/app/.classpath
+/app/.project
+/fastlane/report.xml
+/app/.settings/
 /app/patcher/
 /app/platform-tools/
 /app/platforms
@@ -30,3 +37,4 @@
 /fastlane/.env.dev
 .secret
 /secret
+key.jks
