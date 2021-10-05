@@ -31,7 +31,7 @@ pipeline
         {
             // call fastlane lane for generate apk and uploading to testflight
             steps{
-                withCredentials([file(credentialsId: 'storeFile', variable: 'key.jks'), file(credentialsId: 'env.dev', variable: 'env.dev')]) {
+                withCredentials([file(credentialsId: 'key_jks', variable: 'key_jks'), file(credentialsId: 'env_dev', variable: 'env_dev')]) {
                     sh "chmod +x gradlew"                    
                     sh "chmod +x Gemfile"
                     sh "cp \$key_jks ${workspace}/key.jks"
