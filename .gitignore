@@ -34,7 +34,7 @@
 /app/.knownPackages
 /play_config.json
 /firebase_credentials.json
-/fastlane/.env.dev
+/fastlane/env_dev
 .secret
 /secret
-key.jks
+key_jks
