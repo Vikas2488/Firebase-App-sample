@@ -5,32 +5,19 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.001918132">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000446118">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: slack" time="0.624653814">
+      <testcase classname="fastlane.lanes" name="1: slack" time="0.860201772">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: assemblerelease" time="6.08551323">
+      <testcase classname="fastlane.lanes" name="2: assemblerelease" time="47.036064581">
         
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="3: slack" time="0.580410483">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="4: firebase_app_distribution" time="4.607285869">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="5: slack" time="0.571142111">
+          <failure message="/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:255:in `block in execute_action'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:229:in `chdir'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:229:in `execute_action'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing'&#10;Fastfile:6:in `block (2 levels) in parsing_binding'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/lane_manager.rb:47:in `cruise_lane'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/commands_generator.rb:109:in `block (2 levels) in run'&#10;/var/lib/gems/2.7.0/gems/commander-4.6.0/lib/commander/command.rb:187:in `call'&#10;/var/lib/gems/2.7.0/gems/commander-4.6.0/lib/commander/command.rb:157:in `run'&#10;/var/lib/gems/2.7.0/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:117:in `run!'&#10;/var/lib/gems/2.7.0/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/commands_generator.rb:353:in `run'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/commands_generator.rb:42:in `start'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/fastlane/lib/fastlane/cli_tools_distributor.rb:122:in `take_off'&#10;/var/lib/gems/2.7.0/gems/fastlane-2.195.0/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:23:in `load'&#10;/usr/local/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;Exit status of command '/home/sameed/Desktop/Assignment_mindbowser/latest/cicd_pipeline_jenkins_docker/gradlew assemblerelease -p . -Pandroid.injected.signing.store.file=/home/sameed/Desktop/Assignment_mindbowser/latest/cicd_pipeline_jenkins_docker/key.jks -Pandroid.injected.signing.store.password=123456 -Pandroid.injected.signing.key.alias=key -Pandroid.injected.signing.key.password=123456' was 1 instead of 0.&#10;Starting a Gradle Daemon (subsequent builds will be faster)&#10;&gt; Task :app:preBuild UP-TO-DATE&#10;&gt; Task :app:preReleaseBuild UP-TO-DATE&#10;&gt; Task :app:compileReleaseAidl NO-SOURCE&#10;&gt; Task :app:compileReleaseRenderscript NO-SOURCE&#10;&gt; Task :app:generateReleaseBuildConfig UP-TO-DATE&#10;&gt; Task :app:checkReleaseAarMetadata UP-TO-DATE&#10;&gt; Task :app:generateReleaseResValues UP-TO-DATE&#10;&gt; Task :app:generateReleaseResources UP-TO-DATE&#10;&gt; Task :app:mergeReleaseResources UP-TO-DATE&#10;&gt; Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE&#10;&gt; Task :app:extractDeepLinksRelease UP-TO-DATE&#10;&gt; Task :app:processReleaseMainManifest UP-TO-DATE&#10;&gt; Task :app:processReleaseManifest UP-TO-DATE&#10;&gt; Task :app:processReleaseManifestForPackage UP-TO-DATE&#10;&gt; Task :app:processReleaseResources FAILED&#10;&#10;FAILURE: Build failed with an exception.&#10;&#10;* What went wrong:&#10;Execution failed for task ':app:processReleaseResources'.&#10;&gt; java.nio.file.AccessDeniedException: /home/sameed/Desktop/Assignment_mindbowser/latest/cicd_pipeline_jenkins_docker/app/build/intermediates/processed_res/release/out/resources-release.ap_&#10;&#10;* Try:&#10;Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.&#10;&#10;* Get more help at https://help.gradle.org&#10;&#10;BUILD FAILED in 45s&#10;10 actionable tasks: 1 executed, 9 up-to-date&#10;" />
         
       </testcase>
     
