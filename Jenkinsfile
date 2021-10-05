@@ -37,6 +37,7 @@ pipeline
                     sh "cp \$key_jks ${workspace}/key.jks"
                     sh "cp \$env_dev ${workspace}/fastlane/.env.dev"
                     sh "fastlane build --env dev"    //eg. fastlane build --env development
+                    sh "ls -l ${workspace}"
                 }
             }
         }
