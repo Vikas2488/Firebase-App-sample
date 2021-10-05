@@ -40,8 +40,8 @@ pipeline
                      withCredentials([file(credentialsId: 'storeFile', variable: 'key.jks'), file(credentialsId: 'env.dev', variable: 'env.dev')]) {
                     sh "chmod +x gradlew"                    
                     sh "chmod +x Gemfile"
-                    sh "cp \$key.jks ${workspace}/key.jks"
-                    sh "cp \$env.dev ${workspace}/fastlane/.env.dev"
+                    sh "cp \${key.jks} ${workspace}/key.jks"
+                    sh "cp \${env.dev} ${workspace}/fastlane/.env.dev"
                     sh "fastlane build --env dev"    //eg. fastlane build --env development
                 }
 
