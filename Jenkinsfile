@@ -1,10 +1,10 @@
 pipeline
 { 
     agent{
-        // docker{
-        //     image 'mindbowser/android-30-sdk:1.0'
-        //     args '-u root:root'
-        // }
+        docker{
+            image 'mindbowser/android-30-sdk:1.0'
+            args '-u root:root'
+        }
     }
     stages{
         // stage('Init')
