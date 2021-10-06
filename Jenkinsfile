@@ -35,7 +35,7 @@ pipeline
                 teamDomain: 'Notification_Hooks',
                 channel: 'cicd',
                 message: 'Release Build is successfully completed \n And uploaded on Firebase Distribution!!',
-                tokenCredentialId: 'slack-cicd'
+                tokenCredentialId: 'slack-cicd',
                 username: 'Jenkins CICD Bot'             
             }
         }
