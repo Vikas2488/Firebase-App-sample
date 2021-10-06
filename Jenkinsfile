@@ -15,15 +15,7 @@ pipeline
             steps {
                 script {
                     lastCommitInfo = sh(script: "git log -1", returnStdout: true).trim()
-                    commitContainsSkip = sh(script: "git log -1 | grep 'skip ci'", returnStatus: true)
-                    // slackMessage = "*${env.JOB_NAME}* *${env.BRANCH_NAME}* received a new commit. \nHere is commmit info: ${lastCommitInfo}\n*Console Output*: <${BUILD_URL}/console | (Open)>"
-                    // slack_send(slackMessage)
-                    // if(commitContainsSkip == 0) {
-                    //     skippingText = " Skipping Build for *${env.BRANCH_NAME}* branch."
-                    //     currentBuild.result = 'ABORTED'
-                    //     slack_send(skippingText,"warning")
-                    //     error('BUILD SKIPPED') 
-                    // }
+                    commitContainsSkip = sh(script: "git log -1 | grep 'skip ci'", returnStatus: true)                    
                 }
             }
         }
@@ -41,26 +33,15 @@ pipeline
                 }
             }
         }
+        stage('slack notification')
+        {
+            slackSend channel: '#cicd', message: 'Welcome to Jenkins and slack', tokenCredentialId: 'slack-cicd', username: 'notificationhooks'
+        }
     }
     post {
-        always {
-            // delete the workspace
+        always {            
             sh "chmod -R 777 ."
             deleteDir() 
         }
-        // success{
-        //      slack_send("Jenkins job  for *${env.BRANCH_NAME}* completed successfully. ","#0066ff")
-        // }
-        // aborted{
-        //     slack_send("Jenkins job  for *${env.BRANCH_NAME}* Skipped/Aborted.","warning")
-        // }
-        // failure {
-        //   slack_send("*${env.BRANCH_NAME}* Something went wrong.Build failed. Check here: Console Output*: <${BUILD_URL}/console | (Open)>","danger")
-        // }
     }
 }
-
-// def slack_send(slackMessage,messageColor="good")
-// {
-//     slackSend channel: slack_channel , color: messageColor, message: slackMessage
-// }
