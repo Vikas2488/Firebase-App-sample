@@ -1,11 +1,11 @@
 pipeline
 { 
-    agent{
-        docker{
-            image 'mindbowser/android-30-sdk:1.0'
-            args '-u root:root'
-        }
-    }
+    // agent{
+    //     docker{
+    //         image 'mindbowser/android-30-sdk:1.0'
+    //         args '-u root:root'
+    //     }
+    // }
     stages{
         // stage('Init')
         // {
@@ -35,7 +35,7 @@ pipeline
                 teamDomain: 'Notification_Hooks',
                 channel: 'cicd',
                 message: 'Welcome to Jenkins and slack',
-                tokenCredentialId: 'slack-cicd',
+                tokenCredentialId: 'slack-cicd'
                 // username: 'notificationhooks'
             }
         }
