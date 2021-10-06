@@ -35,7 +35,9 @@ pipeline
         }
         stage('slack notification')
         {
-            slackSend channel: '#cicd', message: 'Welcome to Jenkins and slack', tokenCredentialId: 'slack-cicd', username: 'notificationhooks'
+            steps{
+                slackSend channel: '#cicd', message: 'Welcome to Jenkins and slack', tokenCredentialId: 'slack-cicd', username: 'notificationhooks'
+            }
         }
     }
     post {
