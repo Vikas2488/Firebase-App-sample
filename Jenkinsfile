@@ -8,10 +8,6 @@ pipeline
             args '-u root:root'
         }
     }
-    triggers {
-      pollSCM '* * * * *'
-    }
-    
     stages{
         stage('Init')
         {
