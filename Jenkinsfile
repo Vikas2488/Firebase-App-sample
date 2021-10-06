@@ -34,7 +34,7 @@ pipeline
                 slackSend baseUrl: 'https://hooks.slack.com/services/',
                 teamDomain: 'Notification_Hooks',
                 channel: 'cicd',
-                message: 'Release Build is successfully uploaded on Firebase  Distribution!!',
+                message: 'Release Build is successfully completed \n And uploaded on Firebase Distribution!!',
                 tokenCredentialId: 'slack-cicd'                
             }
         }
