@@ -44,32 +44,6 @@ android {
         }
     }
 
-//     buildTypes {
-//        release {
-//            minifyEnabled false
-//         //    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release
-//            ext.config = getProps('../config/dev.properties')
-//            ext.config.each { p ->
-//                if (p.key == "APPNAME") {
-//                    resValue "string", "app_name", p.value
-//                } else if (p.key == "APPLICATION_ID_SUFFIX") {
-//                    applicationIdSuffix p.value
-//                } else
-//                    buildConfigField 'String', p.key, p.value
-//            }
-//        }
-//    }
-
-    // buildTypes {
-    //     release {
-    //         minifyEnabled false
-    //         proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-    //         signingConfig signingConfigs.release
-    //     }
-    // }
-
     dependencies {
         implementation fileTree(dir: "libs", include: ["*.jar"])
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -81,4 +55,3 @@ android {
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     }
 }
-// }
