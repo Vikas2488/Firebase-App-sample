@@ -2,7 +2,7 @@ default_platform(:android)
 platform :android do
  desc "Generate build and upload to firebase"
  lane :build do
-   slack_send(':crossed_fingers: Generating '+ ENV['BUILD_TYPE'] +' build')
+  #  slack_send(':crossed_fingers: Generating '+ ENV['BUILD_TYPE'] +' build')
    gradle(
      task: "assemble",
      build_type: ENV['BUILD_TYPE'],
@@ -13,7 +13,7 @@ platform :android do
        "android.injected.signing.key.password" => ENV['keyPassword'],
      }
    )
-   slack_send(ENV['BUILD_TYPE']+' Build Successfully completed...:star-struck: \n Uploading to Firebase')
+  #  slack_send(ENV['BUILD_TYPE']+' Build Successfully completed...:star-struck: \n Uploading to Firebase')
    firebase_app_distribution(
      app: ENV["FIREBASE_APP_ID"],
     #  release_notes_file: "releaseNotes.txt",
@@ -21,15 +21,15 @@ platform :android do
      firebase_cli_token: ENV['FIREBASE_CI_TOKEN'],
      debug: false
    )
-   slack_send(':tada: Hoooooorrrayyyyy!!! '+ENV['BUILD_TYPE']+' Build is successfully uploaded on Firebase  Distribution!! :dancer::man_dancing:')
+  #  slack_send(':tada: Hoooooorrrayyyyy!!! '+ENV['BUILD_TYPE']+' Build is successfully uploaded on Firebase  Distribution!! :dancer::man_dancing:')
   end
 end
 
-def slack_send(msg)
-    slack(
-      message: msg,
-      success: true,
-      channel: '#'+ENV['CHANNEL'],
-      default_payloads: []
-    )
-end
+# def slack_send(msg)
+#     slack(
+#       message: msg,
+#       success: true,
+#       channel: '#'+ENV['CHANNEL'],
+#       default_payloads: []
+#     )
+# end
